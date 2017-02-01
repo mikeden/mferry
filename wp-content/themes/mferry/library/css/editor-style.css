@@ -247,7 +247,7 @@ body#tinymce.wp-editor {
         font-style: normal;
     }
   */
-  @import url("https://fonts.googleapis.com/css?family=Martel:400,700|Source+Sans+Pro:400,600,700");
+  @import url("https://fonts.googleapis.com/css?family=Martel:400,700|Source+Sans+Pro:300, 400,600,700");
   /*
   The following is based of Typebase:
   https://github.com/devinhunt/typebase.css
@@ -352,7 +352,7 @@ body#tinymce.wp-editor {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
-  color: #5c6b80;
+  color: #4a4a4a;
   -webkit-font-smoothing: antialiased;
   /*********************
 	LINK STYLES
@@ -809,7 +809,7 @@ body#tinymce.wp-editor .size-thumbnail {
 }
 /* line 182, ../scss/editor-style.scss */
 body#tinymce.wp-editor pre {
-  background: #323944;
+  background: black;
   color: #f8f9fa;
   font-size: 0.9em;
   padding: 1.5em;

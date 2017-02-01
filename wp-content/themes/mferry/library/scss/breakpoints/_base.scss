@@ -16,11 +16,11 @@ GENERAL STYLES
 *********************/
 
 body {
-	font-family: $lato;
+	font-family: $source;
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
-	background-color: $gray;
+	background-color: $black;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
 }
@@ -73,6 +73,7 @@ LAYOUT & GRID STYLES
 .wrap {
 	width: 96%;
 	margin: 0 auto;
+	position: relative;
 }
 
 #content {
@@ -114,6 +115,7 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
 	font-weight: 500;
+	margin:0;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -128,6 +130,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 h1, .h1 {
 	font-size: 2.5em;
 	line-height: 1.333em;
+
 }
 
 h2, .h2 {
@@ -137,7 +140,17 @@ h2, .h2 {
 }
 
 h3, .h3 {
-	font-size: 1.125em;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.1em;
+	text-transform: uppercase;
+	
+
+	&.section-header {
+		display: inline-block;
+		padding-bottom: 17px;
+		border-bottom: 2px solid #fff;
+	}
 }
 
 h4, .h4 {
@@ -152,12 +165,26 @@ h5, .h5 {
 	letter-spacing: 2px;
 }
 
+p {
+	font-family: $source;
+	font-size: 16px;
+
+	&.btn-space {
+		padding-top: 14px;
+	}
+}
+
 /*********************
 HEADER STYLES
 *********************/
 
 .header, .header2 {
 	background-color: $white;
+}
+
+.header {
+	height: 74px;
+	overflow:hidden;
 }
 
 .header2 {
@@ -171,6 +198,152 @@ HEADER STYLES
 			color: $white;
 		}
 	}
+
+
+/*********************
+HOME PAGE
+*********************/
+
+.full-width {
+	display:block;
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+
+	&.hero-wrap {
+		height: 480px;
+
+		.wrap {
+			display:block;
+			height: 100%;
+
+			.type {
+				position: relative;
+  				float: left;
+  				top: 52%;
+  				left: 50%;
+  				transform: translate(-50%, -50%);
+
+  				h1 {
+  					font-family: $serif;
+  					color:$white;
+  					font-size: 36px;
+  					text-align: center;
+  					padding: 0 9% 5% 9%;
+  					width: 100%;
+  					background-image: url(../images/squiggle.png);
+					background-repeat: no-repeat;
+					background-position: bottom center;
+  				}
+			}
+		}
+
+		.image {
+			display:block;
+			width: 100%;
+			height: 100%;
+			opacity:.4;
+		}
+
+		
+	}
+
+	&.about-wrap {
+		background-color:$red;
+
+		
+		padding: 6% 0 6% 0;
+
+		h3 {
+			color:$white;
+		}
+
+		p {
+			color:$white;
+			font-size: 26px;
+			font-weight: 300;
+			line-height: 1.3em;
+			max-width: 960px;
+		}
+	}
+
+	&.home-events-wrap {
+	
+		.swiper-container {
+		    width: 100%;
+		    height:640px;
+		    
+		    background: $black;
+
+		    .swiper-slide {
+
+		    	background: $black;
+
+		    	img {
+		    		width:100%;
+		    		height: auto;
+		    	}
+
+		    	.info {
+		    		padding: 6% 0 6% 0;
+		    		
+		    		display:block;
+		    		width:100%;
+		    		position: absolute;
+		    		height: 100%;
+		    		z-index:2;
+
+		    		h3 {
+		    			color:$white;
+		    		}
+
+		    		h1, p {
+		    			color:$white;
+		    		}
+
+		    		p {
+		    			font-size: 18px;
+
+		    			em {
+		    				font-size: 15px;
+		    			}
+		    		}
+
+		    		h1 {
+		    			font-family: $serif;
+		    			font-size: 36px;
+		    			padding-top: 6%;
+		    			line-height: 1.1em;
+		    		}
+		    	}
+
+		    	.bg-image {
+		    		display:block;
+		    		width: 100%;
+		    		height: 100%;
+		    		position: absolute;
+		    		z-index:1;
+		    		background-image: url(../images/mike_on_stage.jpg);
+		    		background-size: cover;
+		    		background-position: 80% 75%;
+		    		opacity:.4;
+		    	}
+
+		    }
+		}  
+
+	}
+}
+
+.parallax-slider {
+	opacity:.4;
+}
+
+.parallax-mirror {
+	background-color:$black;
+}
+
+
 
 /*********************
 NAVIGATION STYLES
@@ -259,7 +432,10 @@ and more scalable.
 
 	}  /* end current highlighters */
 
+
+
 } /* end .nav */
+
 
 
 /*********************
@@ -267,7 +443,7 @@ POSTS & CONTENT STYLES
 *********************/
 
 #content {
-	margin-top: 1.5em;
+	margin-top: 0;
 }
 
 		.hentry {

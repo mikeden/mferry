@@ -1,0 +1,17 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Super Large Monitor Stylesheet
+
+You can add some advanced styles here if you like. This kicks in
+on larger screens.
+
+******************************************************************/
+/*********************
+LAYOUT STYLES
+*********************/
+/* line 16, ../../scss/breakpoints/1300up.scss */
+.wrap {
+  width: 100%;
+}
