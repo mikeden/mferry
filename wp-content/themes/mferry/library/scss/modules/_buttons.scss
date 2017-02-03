@@ -32,9 +32,9 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   text-transform: uppercase;
   color: $black;
   font-size: 0.9em;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 20px;
-  font-weight: 600;
+  font-weight: 700;
   padding: 12px 24px 12px 50px;
   border-radius: 3px;
   border: 0;
@@ -53,6 +53,17 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
     top: 1px; // adds a tiny hop to the click
   } // end active
 
+  &.centered {
+      
+      background-image: none;
+      padding: 12px 24px 12px 24px;
+      text-align: center;
+  }
+
+  &.full {
+      width: 100%;
+  }
+
 } // end .button
 
 /*
@@ -69,13 +80,13 @@ and it will create a button dependant on those variables.
 
     &:hover,
     &:focus {
-       color: $red;
-      background-color: lighten($white, 4%);
+       color: $black;
+      background-color: darken($white, 10%);
     } // end hover
 
     &:active {
-       color: $red;
-      background-color: lighten($white, 5%);
+       color: $black;
+      background-color: darken($white, 14%);
     } // end active
 }
 
@@ -96,6 +107,51 @@ and it will create a button dependant on those variables.
     &:active {
        color: $white;
       background-color: darken($red, 5%);
+    } // end active
+}
+
+.btn-black {
+    @extend %btn;
+      color: $white;
+     background-color: $black;
+     background-image: url(../images/icon-arrow-white.png);
+     background-repeat: no-repeat;
+     background-position: 20px 50%;
+
+    &:hover,
+    &:focus {
+       color: $white;
+      background-color: lighten($black, 20%);
+    } // end hover
+
+    &:active {
+      color: $white;
+      background-color: lighten($black, 20%);
+    } // end active
+}
+
+.btn-transparent {
+    @extend %btn;
+    color: $text-color;
+     background-color: transparent;
+     background-image: url(../images/icon-arrow.png);
+     background-repeat: no-repeat;
+     background-position: 0px 50%;
+     padding-left: 26px;
+
+     &.light {
+      opacity: .6;
+     }
+
+    &:hover,
+    &:focus {
+       color: darken($gray, 4%);
+      background-color: transparent;
+    } // end hover
+
+    &:active {
+       color: $gray;
+      background-color: transparent;
     } // end active
 }
 

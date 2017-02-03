@@ -2,23 +2,95 @@
 
 				<div id="inner-footer" class="wrap cf">
 
-					<nav role="navigation">
-						<?php wp_nav_menu(array(
-    					'container' => 'div',                           // enter '' to remove nav container (just make sure .footer-links in _base.scss isn't wrapping)
-    					'container_class' => 'footer-links cf',         // class of container (should you choose to use it)
-    					'menu' => __( 'Footer Links', 'bonestheme' ),   // nav name
-    					'menu_class' => 'nav footer-nav cf',            // adding custom nav class
-    					'theme_location' => 'footer-links',             // where it's located in the theme
-    					'before' => '',                                 // before the menu
-    					'after' => '',                                  // after the menu
-    					'link_before' => '',                            // before each link
-    					'link_after' => '',                             // after each link
-    					'depth' => 0,                                   // limit the depth of the nav
-    					'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
-						)); ?>
-					</nav>
 
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+					<div class="d-1of6 no-mobile">
+						<p>
+							<a href="<?php echo site_url(); ?>/agents/">Agents</a>
+						</p>
+						<p>
+							<a href="<?php echo site_url(); ?>/managment/">Management</a>
+						</p>
+						<p>
+							<a href="<?php echo site_url(); ?>/mortgage/">Mortgage</a>
+						</p>
+					</div>
+					<div class="d-1of6 no-mobile">
+						<p>
+							<a href="<?php echo site_url(); ?>/events/">Events</a>
+						</p>
+						<p>
+							<a href="<?php echo site_url(); ?>/products/">Products</a>
+						</p>
+						<p>
+							<a href="<?php echo site_url(); ?>/blog/">Blog</a>
+						</p>
+						<p>
+							<a href="<?php echo site_url(); ?>/resources/">Resources</a>
+						</p>
+					</div>
+					<div class="d-1of6 no-mobile">
+						<p>
+							<a href="<?php echo site_url(); ?>/about/">About Us</a>
+						</p>
+						<p>
+							<a href="<?php echo site_url(); ?>/contact/">Contact</a>
+						</p>
+						<p>
+							<a href="<?php echo site_url(); ?>/members/">Members Area</a>
+						</p>
+					</div>
+
+					<div class="t-1of2 m-1of2 no-dt">
+						<p>
+							<a href="<?php echo site_url(); ?>/agents/">Agents</a>
+						</p>
+						<p>
+							<a href="<?php echo site_url(); ?>/managment/">Management</a>
+						</p>
+						<p>
+							<a href="<?php echo site_url(); ?>/mortgage/">Mortgage</a>
+						</p>
+						<p>
+							<a href="<?php echo site_url(); ?>/events/">Events</a>
+						</p>
+						<p>
+							<a href="<?php echo site_url(); ?>/products/">Products</a>
+						</p>
+						<p>
+							<a href="<?php echo site_url(); ?>/blog/">Blog</a>
+						</p>
+						
+					</div>
+					<div class="t-1of2 m-1of2 no-dt">
+						<p>
+							<a href="<?php echo site_url(); ?>/resources/">Resources</a>
+						</p>
+						<p>
+							<a href="<?php echo site_url(); ?>/about/">About Us</a>
+						</p>
+						<p>
+							<a href="<?php echo site_url(); ?>/contact/">Contact</a>
+						</p>
+						<p>
+							<a href="<?php echo site_url(); ?>/members/">Members Area</a>
+						</p>
+					</div>
+
+
+					<div class="t-all m-all d-1of6">
+						<p>
+							<a href="#" class="social fb">Facebook</a> <a href="#" class="social tw">Twitter</a> <a href="#" class="social ig">Instagram</a> <a href="#" class="social yt">YouTube</a>
+						</p>
+					</div>
+
+
+					<div class="d-1of3 t-all m-all">
+						<p>---- Sign-Up Form Goes Here --- </p>
+					</div>
+
+					<div class="clearfix"></div>
+
+					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>. All rights reserved       Privacy Statement   |   Company Policy    |    Careers</p>
 
 				</div>
 

@@ -66,17 +66,14 @@ FONT FACE (IN YOUR FACE)
   http://www.fontsquirrel.com/
   Be sure to remove the comment brackets.
 */
-/*  @font-face {
-      font-family: 'Font Name';
-      src: url('library/fonts/font-name.eot');
-      src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
-             url('library/fonts/font-name.woff') format('woff'),
-             url('library/fonts/font-name.ttf') format('truetype'),
-             url('library/fonts/font-name.svg#font-name') format('svg');
-      font-weight: normal;
-      font-style: normal;
-  }
-*/
+@font-face {
+  font-family: 'TimesMed';
+  src: url("../../library/fonts/32F481_0_0.eot");
+  src: url("../../library/fonts/32F481_0_0.eot?#iefix") format("embedded-opentype"), url("../../library/fonts/32F481_0_0.woff") format("woff"), url("../../library/fonts/32F481_0_0.ttf") format("truetype"), url("../../library/fonts/32F481_0_0.svg#32F481_0_0") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*
 The following is based of Typebase:
 https://github.com/devinhunt/typebase.css
@@ -90,7 +87,7 @@ I've edited it a bit, but it's a nice starting point.
 some nice typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography
 */
-/* line 69, ../scss/partials/_typography.scss */
+/* line 70, ../scss/partials/_typography.scss */
 p {
   -ms-word-wrap: break-word;
   word-break: break-word;
@@ -275,6 +272,43 @@ GENERAL STYLES
 /*********************
 LAYOUT & GRID STYLES
 *********************/
+/* line 27, ../scss/breakpoints/_768up.scss */
+.full-width.hero-wrap {
+  height: 600px;
+}
+/* line 31, ../scss/breakpoints/_768up.scss */
+.full-width.hero-wrap .wrap .type h1 {
+  font-size: 46px;
+}
+/* line 39, ../scss/breakpoints/_768up.scss */
+.full-width.about-wrap {
+  padding: 9% 0 9% 0;
+}
+/* line 43, ../scss/breakpoints/_768up.scss */
+.full-width.about-wrap p {
+  font-size: 30px;
+}
+/* line 48, ../scss/breakpoints/_768up.scss */
+.full-width.home-blog-wrap {
+  padding: 9% 0 9% 0;
+}
+/* line 52, ../scss/breakpoints/_768up.scss */
+.full-width.home-blog-wrap .recent-posts .post .detail {
+  width: 92%;
+}
+/* line 57, ../scss/breakpoints/_768up.scss */
+.full-width.home-blog-wrap p {
+  padding-right: 45%;
+}
+/* line 62, ../scss/breakpoints/_768up.scss */
+.full-width.quote-wrap {
+  padding: 9% 0 9% 0;
+}
+/* line 66, ../scss/breakpoints/_768up.scss */
+.full-width.quote-wrap h1 {
+  font-size: 30px;
+}
+
 /******************************************************************
 Site Name:
 Author:

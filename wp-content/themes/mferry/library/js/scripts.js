@@ -126,6 +126,66 @@ jQuery(document).ready(function($) {
     }
   );
 
+
+$( "a.login.desktop" ).click(function(e) {
+  e.preventDefault();
+  $("#account-login").toggleClass("open");
+});
+
+$( "a.search.desktop" ).click(function(e) {
+  e.preventDefault();
+  $("#header-search").toggleClass("open");
+});
+
+$( "a.close-search.desktop" ).click(function(e) {
+  e.preventDefault();
+  $("#header-search").removeClass("open");
+});
+
+$( "a.search.mobile" ).click(function(e) {
+  e.preventDefault();
+  $("#header-search-mobile").toggleClass("open");
+});
+
+$( "a.close-search.mobile" ).click(function(e) {
+  e.preventDefault();
+  $("#header-search-mobile").removeClass("open");
+});
+
+$( "a.login.mobile" ).click(function(e) {
+  e.preventDefault();
+  $("#account-login-mobile").toggleClass("open");
+});
+
+
+$(function(){
+    //$('#main-menu').slicknav({
+     //appendTo:'#header-mobile',
+     //allowParentLinks: 'true'
+  //});
+});
+
+//Fallback for vh support;
+
+    function heroResize() { 
+      var width = $( window ).width();
+      var clientHeight = $( window ).height() * .98;
+
+      if (width >= 1024) {
+        $('.full-width.hero-wrap').css('height', clientHeight);
+      } else {
+        $('.full-width.hero-wrap').css('height', '480px');
+      }
+    }
+
+
+
+if (!Modernizr.cssvhunit) {
+    heroResize();
+    $( window ).resize(function() {
+      heroResize();
+    });
+}
    /* Initialize Swiper */
 
   var mySwiper = new Swiper ('.swiper-container', {

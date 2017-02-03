@@ -28,17 +28,17 @@ FONT FACE (IN YOUR FACE)
   Be sure to remove the comment brackets.
 */
 
-/*  @font-face {
-      font-family: 'Font Name';
-      src: url('library/fonts/font-name.eot');
-      src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
-             url('library/fonts/font-name.woff') format('woff'),
-             url('library/fonts/font-name.ttf') format('truetype'),
-             url('library/fonts/font-name.svg#font-name') format('svg');
+@font-face {
+      font-family: 'TimesMed';
+      src: url('../../library/fonts/32F481_0_0.eot');
+      src: url('../../library/fonts/32F481_0_0.eot?#iefix') format('embedded-opentype'),
+             url('../../library/fonts/32F481_0_0.woff') format('woff'),
+             url('../../library/fonts/32F481_0_0.ttf') format('truetype'),
+             url('../../library/fonts/32F481_0_0.svg#32F481_0_0') format('svg');
       font-weight: normal;
       font-style: normal;
   }
-*/
+
 
 @import url('https://fonts.googleapis.com/css?family=Martel:400,700|Source+Sans+Pro:300, 400,600,700');
 
@@ -55,6 +55,7 @@ $sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif:             Times New Roman, Times, "Georgia", Cambria, serif;
 $source:            "Source Sans Pro", sans-serif;
 $martel:            "Martel", serif;
+$times-med:             "TimesMed", Times New Roman, Times, serif;
 
 /*
  i imported this one in the functions file so bones would look sweet.
