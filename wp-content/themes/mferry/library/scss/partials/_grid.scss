@@ -195,6 +195,11 @@ them however you see fit.
     width: 16.6666666667%;
   }
 
+  .d-5of6 {
+    @include grid-col;
+    width: 83.3333333333%;
+  }
+
   .d-1of7 {
     @include grid-col;
     width: 14.2857142857%;

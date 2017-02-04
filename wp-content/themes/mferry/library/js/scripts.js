@@ -196,7 +196,13 @@ if (!Modernizr.cssvhunit) {
     effect: 'fade'
   })      
 
-
+  var mySwiper2 = new Swiper ('.swiper-container-posts', {
+    // Optional parameters
+    loop: true,
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    effect: 'fade'
+  })   
 
 var colors = new Array(
   [230,53,40],

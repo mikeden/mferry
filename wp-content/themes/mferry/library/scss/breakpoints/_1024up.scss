@@ -141,6 +141,13 @@ HEADER STYLES
 LAYOUT STYLES
 *********************/
 
+#main {
+	&.padd-right {
+		padding-right: 18%;
+	}
+}
+
+
 
 /*********************
 HOME PAGE
@@ -215,6 +222,25 @@ HOME PAGE
 
 
 /*********************
+BLOG STYLES
+*********************/
+
+.swiper-container-posts {
+
+	.swiper-slide {
+
+		.blog-header-info {
+
+		    h1 {
+		    	font-size: 46px;
+		    }
+		}
+	}
+
+} 
+
+
+/*********************
 NAVIGATION STYLES
 *********************/
 
@@ -239,6 +265,11 @@ NAVIGATION STYLES
 			li {
 				a {
 					border-bottom: none !important;
+					color: $text-color !important;
+
+					&:hover {
+						color: $red !important;
+					}
 				}
 			}
 		}
@@ -272,9 +303,10 @@ NAVIGATION STYLES
 			border-top: 0;
 			position: absolute;
 			left:0;
+			top:82px;
 			visibility:hidden;
 			opacity:0;
-			z-index: -1;
+			z-index: 999;
 			width: 500px;
 			height: 60px;
 			background: transparent;
@@ -365,14 +397,16 @@ NAVIGATION STYLES
 		a { 
 			color: $red; 
 			border-bottom: 3px solid $red;
-
-
-
 		}
 	}  /* end current highlighters */
 
 
 } /* end .nav */
+
+.single-post #menu-item-22 a {
+	color: $red; 
+	border-bottom: 3px solid $red;
+}
 
 #menu-item-27, #menu-item-22 {
 	a {
@@ -406,6 +440,44 @@ ul.sub {
 	}
 }
 
+
+.sub-navigation {
+	ul {
+		margin-top: 5px;
+	}
+	.pagenav {
+		font-weight: 600;
+		font-size: 15px;
+
+		li {
+			position: relative;
+
+			a {
+				font-size: 14px;
+				font-weight: 400;
+
+				
+			}
+			&.current_page_item {
+				a {
+					padding-left: 18px;
+					&:before {
+						position:absolute;
+						top:10px;
+						left:0px;
+						display:block;
+						height:3px;
+						width:10px;
+						border-top:2px solid $red;
+						content:'';
+					}
+				}
+			}
+		}
+	}
+
+}
+
 .logo {
 	width: 61px;
 	height: 60px;
@@ -428,7 +500,8 @@ SIDEBARS & ASIDES
 *********************/
 
 .sidebar {
-	margin-top: 2.2em;
+	margin-top: 0;
+	padding-top: 120px;
 }
 
 	.widgettitle {

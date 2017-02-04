@@ -309,6 +309,26 @@ LAYOUT & GRID STYLES
   font-size: 30px;
 }
 
+/* line 75, ../scss/breakpoints/_768up.scss */
+#content .entry-thumbnail {
+  width: 20%;
+  padding-bottom: 14%;
+}
+/* line 80, ../scss/breakpoints/_768up.scss */
+#content .right-float {
+  width: 76%;
+}
+
+/* line 87, ../scss/breakpoints/_768up.scss */
+.swiper-container-posts {
+  margin-bottom: 6%;
+  margin-top: 8%;
+}
+/* line 93, ../scss/breakpoints/_768up.scss */
+.swiper-container-posts .swiper-slide .blog-header-info h1 {
+  font-size: 36px;
+}
+
 /******************************************************************
 Site Name:
 Author:

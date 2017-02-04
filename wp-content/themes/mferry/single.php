@@ -2,9 +2,49 @@
 
 			<div id="content">
 
+				<div class="page-header standard-header" style="background-image:url(<?php the_post_thumbnail_url('full'); ?>)">
+
+				</div>
+
 				<div id="inner-content" class="wrap cf">
 
-					<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<aside class="sub-navigation no-mobile t-1of5 d-1of6">
+
+						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+							<?php printf( '<p class="category-listing">' . __('', 'bonestheme' ) . '%1$s</p>' , get_the_category_list(', ') ); ?>
+							<p class="byline entry-meta vcard">
+                                 <?php printf( __( '', 'bonestheme' ).' %1$s',
+       								/* the time the post was published */
+       								'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>'
+    							); ?>
+							</p>
+							<p class="author">
+								By <?php 
+									$fname = get_the_author_meta('first_name');
+									$lname = get_the_author_meta('last_name');
+									$full_name = '';
+
+									if( empty($fname)){
+									    $full_name = $lname;
+									} elseif( empty( $lname )){
+									    $full_name = $fname;
+									} else {
+									    //both first name and last name are present
+									    $full_name = "{$fname} {$lname}";
+									}
+
+									echo $full_name;
+								 ?>
+							</p>
+						<?php endwhile; ?>
+
+						<?php else : ?>
+
+						<?php endif; ?>
+						
+					</aside>
+
+					<main id="main" class="m-all t-4of5 d-5of6 cf padd-right" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -45,7 +85,6 @@
 
 					</main>
 
-					<?php get_sidebar(); ?>
 
 				</div>
 

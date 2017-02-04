@@ -14,7 +14,7 @@
 				<div class="full-width about-wrap" id="gradient">
 					<div class="wrap">
 						<h3 class="section-header">
-							About
+							About 
 						</h3>
 						<p>
 							For over 40 years The Mike Ferry Organization has been the leader in Real Estate Coaching. Our teaching system is designed to increase your productivity and success using the industry’s most advanced coaching, seminars and tools. 
@@ -123,7 +123,7 @@
 						</div>
 
 						<p>
-							<a class="btn-red">Read the Blog</a>
+							<a href="<?php echo site_url(); ?>/about/blog/" class="btn-red">Read the Blog</a>
 						</p>
 					</div>
 				</div>

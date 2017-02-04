@@ -60,6 +60,10 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
       text-align: center;
   }
 
+  &.block {
+    display:block;
+  }
+
   &.full {
       width: 100%;
   }
@@ -92,7 +96,7 @@ and it will create a button dependant on those variables.
 
 .btn-red {
     @extend %btn;
-      color: $white;
+      color: $white !important;
      background-color: $red;
      background-image: url(../images/icon-arrow-white.png);
      background-repeat: no-repeat;
@@ -132,7 +136,7 @@ and it will create a button dependant on those variables.
 
 .btn-transparent {
     @extend %btn;
-    color: $text-color;
+    color: $gray;
      background-color: transparent;
      background-image: url(../images/icon-arrow.png);
      background-repeat: no-repeat;
@@ -141,10 +145,19 @@ and it will create a button dependant on those variables.
 
      &.light {
       opacity: .6;
+
+        &:hover {
+
+        }
+     }
+
+     &.red {
+      background-image: url(../images/icon-arrow-red.png);
      }
 
     &:hover,
     &:focus {
+      opacity: 1;
        color: darken($gray, 4%);
       background-color: transparent;
     } // end hover

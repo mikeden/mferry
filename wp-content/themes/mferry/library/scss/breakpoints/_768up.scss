@@ -70,4 +70,34 @@ LAYOUT & GRID STYLES
 	}
 }
 
+#content {
+
+	.entry-thumbnail {
+		width: 20%;
+		padding-bottom: 14%;
+	}
+
+	.right-float {
+		width:76%;
+	}
+}
+
+
+
+.swiper-container-posts {
+
+	.swiper-slide {
+
+		.blog-header-info {
+
+		    h1 {
+		    	font-size: 36px;
+		    }
+		}
+	}
+
+	margin-bottom: 6%;
+	margin-top: 8%;
+} 
+
 

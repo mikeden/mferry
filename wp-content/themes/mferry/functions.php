@@ -244,4 +244,17 @@ function bones_fonts() {
 
 add_action('wp_enqueue_scripts', 'bones_fonts');
 
+function get_excerpt(){
+$permalink = get_permalink($post->ID);
+$excerpt = get_the_content();
+$excerpt = preg_replace(" ([.*?])",'',$excerpt);
+$excerpt = strip_shortcodes($excerpt);
+$excerpt = strip_tags($excerpt);
+$excerpt = substr($excerpt, 0, 220);
+$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+$excerpt = trim(preg_replace( '/s+/', ' ', $excerpt));
+$excerpt = $excerpt.'... <br/><a class="btn-transparent red" href="'.$permalink.'">more</a>';
+return $excerpt;
+}
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>
