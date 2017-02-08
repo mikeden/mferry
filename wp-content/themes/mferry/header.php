@@ -42,7 +42,7 @@
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-		<div id="container">
+		<div id="container" class="">
 
 
 
@@ -149,24 +149,25 @@
 					</form>
 				</div>
 			</div>
-
-			<div class="wrap">
-				<div id="account-login" class="no-mobile">
-					<p>Welcome!</p>
-					<form action="">
-						<div>
-							<input type="text" placeholder="Username" required="" id="username--" />
-						</div>
-						<div>
-							<input type="password" placeholder="Password" required="" id="password--" />
-						</div>
-						<div>
-							<input type="submit" value="Log in" class="btn-red centered full" />
-							<p>
-								<a href="#">Lost your password?</a>
-							</p>
-						</div>
-					</form>
+			<div class="login-wrap">
+				<div class="wrap">
+					<div id="account-login" class="no-mobile">
+						<p>Welcome!</p>
+						<form action="">
+							<div>
+								<input type="text" placeholder="Username" required="" id="username--" />
+							</div>
+							<div>
+								<input type="password" placeholder="Password" required="" id="password--" />
+							</div>
+							<div>
+								<input type="submit" value="Log in" class="btn-red centered full" />
+								<p>
+									<a href="#">Lost your password?</a>
+								</p>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
 		

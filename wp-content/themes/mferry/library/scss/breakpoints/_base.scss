@@ -20,7 +20,7 @@ body {
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
-	background-color: $white;
+	background-color: $black;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
 
@@ -59,7 +59,7 @@ style a page via class
 		.h2 {
 
 		}
-		font-size: 60px;
+		font-size: 30px;
 	}
 
 	.category-listing {
@@ -113,7 +113,7 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 96%;
+	width: 92%;
 	margin: 0 auto;
 	position: relative;
 }
@@ -132,14 +132,51 @@ LAYOUT & GRID STYLES
 
 .page-header {
 	display:block;
+	position: relative;
 	width: 100%;
 	min-height: 200px;
 	background-color:$black;
+	background-image: url(../images/quote-bg.png);
+	background-position: top-center;
 	overflow:hidden;
 	margin-top: 60px;
 
+	.wrap {
+		z-index:2;
+	}
+
+	.page-title {
+		color:$white;
+		font-size: 40px;
+		line-height: 200px;
+	}
+
 	&.small {
 
+	}
+
+	.offset {
+		display:block;
+		width: 100%;
+		height: 80%;
+		position: absolute;
+		z-index:1;
+		background-image: url(../images/quote-bg.png);
+		background-position: top center;
+		top:0;
+		left:0;
+	}
+
+	.header-image {
+		display:block;
+		width: 100%;
+		height: auto;
+		min-height: 292px;
+		margin-top: 70px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding-bottom: 42%;
+		z-index:1;
 	}
 }
 
@@ -152,8 +189,8 @@ LAYOUT & GRID STYLES
 	background-position: top center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	padding-bottom: 30%;
 	min-height: 300px;
+	background: $white;
 }
 
 
@@ -221,13 +258,24 @@ h1, .h1 {
 	font-size: 2.5em;
 	line-height: 1.333em;
 
+	&.sub-head{
+		font-size: 24px;
+		padding-top: 12px;
+		padding-bottom: 21px;
+		background-image: url(../images/squiggle.png);
+		background-repeat: no-repeat;
+		background-position: bottom left;
+		margin-bottom: 1.1em;
+
+	}
+
 }
 
 h2, .h2 {
-	font-size: 30px;
+	font-size: 24px;
 	font-weight: 300;
 	line-height: 1.4em;
-	padding-bottom: 1.2em;
+	padding-bottom: 1.1em;
 }
 
 h3, .h3 {
@@ -246,6 +294,14 @@ h3, .h3 {
 		&.dark {
 			border-bottom: 2px solid $red;
 		}
+
+		&.intro {
+			border-bottom: 2px solid $red;
+			color:$white;
+			text-align: center;
+			margin: 0 auto;
+		}
+
 	}
 }
 
@@ -265,7 +321,7 @@ p {
 	font-family: $source;
 	font-size: 16px;
 	margin:0;
-	padding-bottom: 1em;
+	padding-bottom: 1.4em;
 
 	&.btn-space {
 		padding-top: 14px;
@@ -496,6 +552,10 @@ HOME PAGE
 	position: relative;
 	width: 100%;
 	overflow: hidden;
+	
+	&.white {
+		background:$white;
+	}
 
 	&.hero-wrap {
 		height: 480px;
@@ -506,6 +566,7 @@ HOME PAGE
 
 			.type {
 				position: relative;
+				text-align: center;
   				float: left;
   				top: 56%;
   				left: 50%;
@@ -632,7 +693,14 @@ HOME PAGE
 
 		.recent-posts {
 
+			width: 101%;
+			margin-left: -.5%;
+
 			margin-bottom: 40px;
+
+			.d-1of4, .t-1of4 {
+				padding-right:0;
+			}
 
 			.post {
 				.detail {
@@ -809,6 +877,68 @@ BLOG STYLES
 	margin-top: 8%;
 } 
 
+.searchandfilter ul {
+	
+	background: #F8F8F4;
+	padding: 0 10px 0 10px;
+	margin-bottom: 50px;
+	height: 120px;
+
+	li {
+		display:inline-block;
+		margin-right: 12px;
+		font-weight: 700;
+		padding-bottom:0;
+		width:100%;
+		text-align: right;
+		line-height: 40px;
+
+		label {
+			float: right;
+		}
+
+		select {
+			margin-bottom: 0;
+			font-weight: 400;
+			min-width: 140px !important;
+			padding-right: 50px;
+		}
+
+		input {
+			min-width: 130px !important;
+		}
+
+		
+
+		&.sf-field-search {
+			display:none;
+			float: right;
+			margin-right:0;
+		}
+
+		&.sf-field-author {
+			float:right;
+			margin-left: 6;
+			margin-right:0;
+		}
+
+		&.sf-field-category {
+
+			float:right;
+
+			&:before {
+				content: "Filter by: ";
+			}
+
+			label {
+				margin-left: 8px;
+			}
+		}
+	}
+}
+
+
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -939,7 +1069,7 @@ POSTS & CONTENT STYLES
 			}
 
 			footer {
-				padding: 1.5em;
+				padding: 0 0 1.5em 0;
 
 				p {
 					margin: 0;
@@ -994,7 +1124,7 @@ POSTS & CONTENT STYLES
 			padding: 0 0 1.5em 0;
 
 			p {
-				margin: 0 0 1.5em;
+				
 			}
 
 
@@ -1060,11 +1190,30 @@ POSTS & CONTENT STYLES
 			}
 
 			blockquote {
-				margin: 0 0 1.5em 0.75em;
-				padding: 0 0 0 0.75em;
-				border-left: 3px solid $blue;
-				font-style: italic;
-				color: $meta-gray;
+				padding: 50px 2% 60px 2%;
+				
+				margin: 0;
+				text-align:center;
+				
+
+				p {
+					font-size: 22px;
+					font-family: $times-med;
+					padding-bottom: 1em;
+					font-style: italic;
+					
+					background-image: url(../images/squiggle.png);
+					background-repeat: no-repeat;
+					background-position: bottom center;
+				}
+
+				h5 {
+					font-size: 12px;
+					font-family: $source;
+					text-transform: none;
+					padding: 14px 0 4px 0;
+				}
+
 
 				&:before {}
 
@@ -1165,81 +1314,70 @@ POSTS & CONTENT STYLES
 	// the tag output
 	.tags {
 		margin: 0;
+		float:left;
+
 	}
 
-/******************************************************************
-PAGE NAVI STYLES
-******************************************************************/
+	.next-post {
+		margin: 0;
+		float:right;
+	}
 
-.pagination,
-.wp-prev-next {
-	margin: 1.5em 0;
+.wp-pagenavi {
+	text-align: center;
+	padding-bottom: 60px;
+	position: relative;
+
+	span.current {
+		border: none;
+		display:inline-block;
+		border-bottom: 3px solid $red;
+		padding: 3px 5px;
+		margin:2px;
+	}
+	a {
+		border: none;
+		padding: 3px 5px;
+		margin:2px;
+
+		&:hover  {
+			border-bottom: 3px solid $red;
+			color: $black !important;
+		}
+		display:inline-block;
+
+		
+
+		&.previouspostslink, &.nextpostslink {
+			color:$white;
+			background-color:$light-gray;
+			padding: 3px 8px;
+			border-radius: 3px;
+			z-index:2;
+			-webkit-transition: background-color 500ms ease-out;
+		    -moz-transition: background-color 500ms ease-out;
+		    -o-transition: background-color 500ms ease-out;
+    		transition: background-color 500ms ease-out;
+
+			&:hover {
+				border-bottom: 0;
+				background-color: $black;
+				color:$white !important;
+			}
+		}
+
+		&.previouspostslink {
+			position: absolute;
+			left:0;
+		}
+
+		&.nextpostslink {
+			position: absolute;
+			right:0;
+		}
+	}
 }
-	.pagination{
-    text-align: center;
 
-    ul {
-      display: inline-block;
-      background-color: $white;
-      white-space: nowrap;
-      padding: 0;
-      clear: both;
-      border-radius: 3px;
-    }
-
-    li {
-      padding: 0;
-      margin: 0;
-      float: left;
-      display: inline;
-      overflow: hidden;
-      border-right: 1px solid $gray;
-    }
-
-    a, span {
-      margin: 0;
-      text-decoration: none;
-      padding: 0;
-      line-height: 1em;
-      font-size: 1em;
-      font-weight: normal;
-      padding: 0.75em;
-      min-width: 1em;
-      display: block;
-      color: $blue;
-
-      &:hover, &:focus {
-      	background-color: $blue;
-      	color: $white;
-      }
-    }
-
-    .current{
-    	cursor: default;
-    	color: $text-color;
-
-    	&:hover, &:focus {
-    		background-color: $white;
-    		color: $text-color;
-    	}
-    }
-
-  } /* end .bones_page_navi */
-
-	/* fallback previous & next links */
-	.wp-prev-next {
-
-		ul {}
-
-		.prev-link {
-			float: left;
-		}
-
-		.next-link {
-			float: right;
-		}
-
-	} /* end .wp-prev-next */
 
 /******************************************************************
 COMMENT STYLES

@@ -13,6 +13,19 @@ on larger screens.
 LAYOUT STYLES
 *********************/
 
+.page-header {
+	min-height: 400px;
+	.page-title {
+		font-size: 54px;
+		line-height: 400px;
+	}
+}
+
+
+h2, .h2 {
+	font-size: 30px;
+}
+
 
 
 
@@ -39,6 +52,16 @@ LAYOUT STYLES
 /*********************
 BLOG STYLES
 *********************/
+
+.single {
+	.entry-title {
+		.h2 {
+
+		}
+		font-size: 54px;
+	}
+}
+
 
 .swiper-container-posts {
 

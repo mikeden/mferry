@@ -257,4 +257,110 @@ $excerpt = $excerpt.'... <br/><a class="btn-transparent red" href="'.$permalink.
 return $excerpt;
 }
 
+// Add FEATURED post functionality //
+
+function sm_custom_meta() {
+    add_meta_box( 'sm_meta', __( 'Featured Posts', 'sm-textdomain' ), 'sm_meta_callback', 'post' );
+}
+function sm_meta_callback( $post ) {
+    $featured = get_post_meta( $post->ID );
+    ?>
+ 
+  <p>
+    <div class="sm-row-content">
+        <label for="featured-checkbox">
+            <input type="checkbox" name="featured-checkbox" id="featured-checkbox" value="yes" <?php if ( isset ( $featured['featured-checkbox'] ) ) checked( $featured['featured-checkbox'][0], 'yes' ); ?> />
+            <?php _e( 'Featured this post', 'sm-textdomain' )?>
+        </label>
+        
+    </div>
+</p>
+ 
+    <?php
+}
+add_action( 'add_meta_boxes', 'sm_custom_meta' );
+
+function sm_meta_save( $post_id ) {
+ 
+    // Checks save status
+    $is_autosave = wp_is_post_autosave( $post_id );
+    $is_revision = wp_is_post_revision( $post_id );
+    $is_valid_nonce = ( isset( $_POST[ 'sm_nonce' ] ) && wp_verify_nonce( $_POST[ 'sm_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+ 
+    // Exits script depending on save status
+    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+        return;
+    }
+ 
+ // Checks for input and saves
+if( isset( $_POST[ 'featured-checkbox' ] ) ) {
+    update_post_meta( $post_id, 'featured-checkbox', 'yes' );
+} else {
+    update_post_meta( $post_id, 'featured-checkbox', '' );
+}
+ 
+}
+add_action( 'save_post', 'sm_meta_save' );
+
+
+function wpb_mce_buttons_2($buttons) {
+  array_unshift($buttons, 'styleselect');
+  return $buttons;
+}
+add_filter('mce_buttons_2', 'wpb_mce_buttons_2');
+
+/*
+* Callback function to filter the MCE settings
+*/
+
+function my_mce_before_init_insert_formats( $init_array ) {  
+
+// Define the style_formats array
+
+  $style_formats = array(  
+/*
+* Each array child is a format with it's own settings
+* Notice that each array has title, block, classes, and wrapper arguments
+* Title is the label which will be visible in Formats menu
+* Block defines whether it is a span, div, selector, or inline style
+* Classes allows you to define CSS classes
+* Wrapper whether or not to add a new block-level element around any selected elements
+*/
+    array(  
+      'title' => 'Content Block',  
+      'block' => 'div',  
+      'classes' => 'content-block',
+      'wrapper' => true,
+      
+    ),  
+    array(  
+      'title' => 'Blue Button',  
+      'block' => 'span',  
+      'classes' => 'blue-button',
+      'wrapper' => true,
+    ),
+    array(  
+      'title' => 'Red Button',  
+      'block' => 'span',  
+      'classes' => 'red-button',
+      'wrapper' => true,
+    ),
+  );  
+  // Insert the array, JSON ENCODED, into 'style_formats'
+  $init_array['style_formats'] = json_encode( $style_formats );  
+  
+  return $init_array;  
+  
+} 
+// Attach callback to 'tiny_mce_before_init' 
+add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' ); 
+
+add_filter('tiny_mce_before_init', 'customize_tinymce');
+
+function customize_tinymce($in) {
+  $in['paste_preprocess'] = "function(pl,o){ o.content = o.content.replace(/p class=\"p[0-9]+\"/g,'p'); o.content = o.content.replace(/span class=\"s[0-9]+\"/g,'span'); }";
+  return $in;
+}
+
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>

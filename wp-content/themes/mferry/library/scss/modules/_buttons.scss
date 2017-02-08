@@ -114,7 +114,7 @@ and it will create a button dependant on those variables.
     } // end active
 }
 
-.btn-black {
+.btn-black, .next-post a {
     @extend %btn;
       color: $white;
      background-color: $black;
@@ -166,6 +166,47 @@ and it will create a button dependant on those variables.
        color: $gray;
       background-color: transparent;
     } // end active
+}
+
+.next-post a {
+    @extend %btn;
+    padding: 8px 14px 8px 14px;
+    color: $white !important;
+     background-color: $black;
+     background-image: none;
+
+    &:hover,
+    &:focus {
+       color: white !important;
+      background-color: lighten($black, 20%);
+    } // end hover
+
+    &:active {
+      color: white !important;
+      background-color: lighten($black, 20%);
+    } // end active
+}
+
+.tags a {
+    @extend %btn;
+    background-color: $white;
+    border: 1px solid $light-gray;
+    text-transform: none;
+    font-weight: 400;
+    color: $black;
+    padding: 8px 14px 8px 14px;
+    margin-right: 8px;
+    &:hover,
+      &:focus {
+         color: $black;
+        background-color: darken($white, 10%);
+      } // end hover
+
+      &:active {
+         color: $black;
+        background-color: darken($white, 14%);
+      } // end active
+
 }
 
 

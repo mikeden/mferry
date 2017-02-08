@@ -116,6 +116,21 @@ jQuery(document).ready(function($) {
   */
   loadGravatars();
 
+
+$(function() {
+
+    var header = $("#container");
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 10) {
+            header.addClass("mini");
+        } else {
+            header.removeClass("mini");
+        }
+    });
+});
+
   /* Show Secondary Navigation on Rollover */
 
   $("#menu-item-27, #menu-item-22").hover(
