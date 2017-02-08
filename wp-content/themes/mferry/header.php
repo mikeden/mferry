@@ -68,8 +68,8 @@
 						)); ?>
 
 						<div class="admin">
-							<div class="search"><a class="search desktop" href="#"><i class="fa fa-search fa-lg2" aria-hidden="true"></i></a></div>
-							<div class="cart"><a class="cart desktop" href="#"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i></a></div>
+							<div class="search"><a class="search desktop" href="#"><img src="<?php echo get_template_directory_uri(); ?>/library/images/m-glass.svg" class="svg"></a></div>
+							<div class="cart"><a class="cart desktop" href="#"><img src="<?php echo get_template_directory_uri(); ?>/library/images/shopping-basket.svg" class="svg"></a></div>
 							<div class="login"><a class="login desktop" href="#">Login</a></div>
 						</div>
 					</nav>
@@ -87,8 +87,8 @@
 					<div id="mobile-login" class="hidden">
 						<div class="header">
 							<div class="admin">
-								<div class="search"><a class="search mobile" href="#"><i class="fa fa-search fa-lg2" aria-hidden="true"></i></a></div>
-								<div class="cart"><a class="cart mobile" href="#"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i></a></div>
+								<div class="search"><a class="search mobile" href="#"><img src="<?php echo get_template_directory_uri(); ?>/library/images/m-glass.svg" class="svg"></a></div>
+								<div class="cart"><a class="cart mobile" href="#"><img src="<?php echo get_template_directory_uri(); ?>/library/images/shopping-basket.svg" class="svg"></a></div>
 								<div class="login"><a class="login mobile" href="#">Login</a></div>
 							</div>
 						</div>

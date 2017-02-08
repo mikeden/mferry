@@ -33,7 +33,15 @@ body {
 	display:none;
 }
 
+.no-mobile-sm {
+	display:none;
+}
+
 .no-dt {
+	display:block;
+}
+
+.no-dt-sm {
 	display:block;
 }
 
@@ -128,6 +136,12 @@ LAYOUT & GRID STYLES
 
 #main, .sub-navigation {
 	padding-top: 60px;
+}
+
+.page-template-page-template-landing-pages {
+	#main {
+		padding-top: 90px;
+	}
 }
 
 .page-header {
@@ -426,6 +440,9 @@ HEADER STYLES
 
 			&:hover, &.active {
 				color:$red;
+					svg path {
+   					fill: $red;
+   				}
 			}
 
 			&.login {
@@ -601,7 +618,7 @@ HOME PAGE
 		background-color:$red;
 
 
-		padding: 14% 0 14% 0;
+		padding: 14% 0 12% 0;
 
 		h3 {
 			color:$white;
@@ -806,6 +823,24 @@ HOME PAGE
 
 .parallax-mirror {
 	background-color:$black;
+}
+
+/*********************
+LANDING PAGES 
+*********************/
+
+.callout {
+	.image {
+
+		img {
+			width: 100%;
+			height: auto;
+			max-width: 630px;
+		}
+	}
+
+	padding-bottom: 60px;
+	
 }
 
 /*********************
@@ -1676,6 +1711,10 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
+
+.main-footer {
+	visibility: hidden;
+}
 
 .footer {
 	clear: both;

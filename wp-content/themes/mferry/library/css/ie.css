@@ -269,75 +269,99 @@ come into play. Have fun!
 /*********************
 GENERAL STYLES
 *********************/
+/* line 22, ../scss/breakpoints/_768up.scss */
+.no-mobile-sm {
+  display: block;
+}
+
+/* line 26, ../scss/breakpoints/_768up.scss */
+.no-dt-sm {
+  display: none;
+}
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
-/* line 28, ../scss/breakpoints/_768up.scss */
+/* line 36, ../scss/breakpoints/_768up.scss */
 .page-header .page-title {
   font-size: 40px;
 }
 
-/* line 34, ../scss/breakpoints/_768up.scss */
+/* line 42, ../scss/breakpoints/_768up.scss */
+.page-template-page-template-landing-pages #main {
+  padding-top: 120px;
+}
+
+/* line 48, ../scss/breakpoints/_768up.scss */
 .full-width.hero-wrap {
   height: 600px;
 }
-/* line 38, ../scss/breakpoints/_768up.scss */
+/* line 52, ../scss/breakpoints/_768up.scss */
 .full-width.hero-wrap .wrap .type h1 {
   font-size: 46px;
 }
-/* line 46, ../scss/breakpoints/_768up.scss */
+/* line 60, ../scss/breakpoints/_768up.scss */
 .full-width.about-wrap {
   padding: 9% 0 9% 0;
 }
-/* line 50, ../scss/breakpoints/_768up.scss */
+/* line 64, ../scss/breakpoints/_768up.scss */
 .full-width.about-wrap p {
   font-size: 30px;
 }
-/* line 55, ../scss/breakpoints/_768up.scss */
+/* line 69, ../scss/breakpoints/_768up.scss */
 .full-width.home-blog-wrap {
   padding: 9% 0 9% 0;
 }
-/* line 59, ../scss/breakpoints/_768up.scss */
+/* line 73, ../scss/breakpoints/_768up.scss */
 .full-width.home-blog-wrap .recent-posts .post .detail {
   width: 94%;
   margin: 0 auto;
 }
-/* line 65, ../scss/breakpoints/_768up.scss */
+/* line 79, ../scss/breakpoints/_768up.scss */
 .full-width.home-blog-wrap p {
   padding-right: 45%;
 }
-/* line 70, ../scss/breakpoints/_768up.scss */
+/* line 84, ../scss/breakpoints/_768up.scss */
 .full-width.quote-wrap {
   padding: 9% 0 9% 0;
 }
-/* line 74, ../scss/breakpoints/_768up.scss */
+/* line 88, ../scss/breakpoints/_768up.scss */
 .full-width.quote-wrap h1 {
   font-size: 30px;
 }
 
-/* line 83, ../scss/breakpoints/_768up.scss */
+/* line 97, ../scss/breakpoints/_768up.scss */
 #content .entry-thumbnail {
   width: 20%;
   padding-bottom: 14%;
 }
-/* line 88, ../scss/breakpoints/_768up.scss */
+/* line 102, ../scss/breakpoints/_768up.scss */
 #content .right-float {
   width: 76%;
 }
 
-/* line 95, ../scss/breakpoints/_768up.scss */
+/* line 109, ../scss/breakpoints/_768up.scss */
 .swiper-container-posts {
   margin-bottom: 6%;
   margin-top: 8%;
 }
-/* line 101, ../scss/breakpoints/_768up.scss */
+/* line 115, ../scss/breakpoints/_768up.scss */
 .swiper-container-posts .swiper-slide .blog-header-info h1 {
   font-size: 36px;
 }
 
-/* line 112, ../scss/breakpoints/_768up.scss */
+/* line 126, ../scss/breakpoints/_768up.scss */
 .single .entry-title {
   font-size: 34px;
+}
+
+/* line 134, ../scss/breakpoints/_768up.scss */
+.callout {
+  padding-bottom: 120px;
+}
+/* line 136, ../scss/breakpoints/_768up.scss */
+.callout .description p {
+  padding-right: 8%;
 }
 
 /******************************************************************

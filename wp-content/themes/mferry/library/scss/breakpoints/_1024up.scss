@@ -237,6 +237,12 @@ LAYOUT STYLES
 	}
 }
 
+.page-template-page-template-landing-pages {
+	#main {
+		padding-top: 180px;
+	}
+}
+
 h2, .h2 {
 	font-size: 26px;
 }
@@ -275,7 +281,7 @@ HOME PAGE
 
 	&.about-wrap {
 
-		padding: 6% 0 6% 0;
+		padding: 6% 0 4% 0;
 	
 		p {
 			font-size: 30px;
@@ -654,6 +660,12 @@ ul.sub {
 		transition: padding-top .3s ease-in-out;
    		-moz-transition: padding-top .3s ease-in-out;
    		-webkit-transition: padding-top .3s ease-in-out;
+
+   		a:hover {
+   			svg path {
+   				fill: $red;
+   			}
+   		}
 	}
 }
 

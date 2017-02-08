@@ -3,27 +3,31 @@
 
 			<div id="content">
 
-				<div class="full-width hero-wrap" data-parallax="scroll" data-image-src="<?php echo get_template_directory_uri(); ?>/library/images/mike_session.jpg">
+				<div class="full-width hero-wrap" data-parallax="scroll" data-image-src="<?php the_field('header_image'); ?>">
 					<div class="wrap">
 						<div class="type">
-							<h1>A bold introduction statement will go here to peak interest and to introduce some personality.</h1>
+							<h1><?php the_field('page_header_copy'); ?></h1>
 						</div>
 					</div>
 				</div>
 
-				<div class="full-width about-wrap" id="gradient">
-					<div class="wrap">
-						<h3 class="section-header">
-							About 
-						</h3>
-						<p>
-							For over 40 years The Mike Ferry Organization has been the leader in Real Estate Coaching. Our teaching system is designed to increase your productivity and success using the industry’s most advanced coaching, seminars and tools. 
-						</p>
-						<p>
-							<a class="btn-white">LEARN MORE</a>
-						</p>
+				<?php if (get_field('intro_copy')) { ?>
+					<div class="full-width about-wrap" id="gradient">
+						<div class="wrap">
+							<?php if (get_field('intro_title')) { ?>
+								<h3 class="section-header"><?php the_field('intro_title'); ?></h3>
+							<?php } ?>
+							<p>
+								<?php the_field('intro_copy'); ?>
+							</p>
+							<?php if (get_field('intro_link')) { ?>
+								<p>
+									<a href="<?php the_field('intro_link'); ?>" class="btn-white">LEARN MORE</a>
+								</p>
+							<?php } ?>
+						</div>
 					</div>
-				</div>
+				<?php } ?>
 
 				<div class="full-width home-events-wrap">
 					<!-- Slider main container -->
@@ -83,42 +87,33 @@
 							Stay up to date with the Mike Ferry Organization and lorem ipsum dolar sit amet dolar.
 						</p>
 						<div class="recent-posts">
-							<div class="post m-all t-1of4 d-1of4">
-								<div class="detail">
-									<div class="image" style="background-image: url(<?php echo get_template_directory_uri(); ?>/library/images/mike_on_stage_tn.jpg)"></div>
-									<p class="cat">Category</p>
-									<h1>Blog headline here lorem ipsum</h1>
-									<p>Descriptor text lorem ipsum dolar sit amet consectuer a domus is magna…</p>
-									<a class="btn-transparent light">LEARN MORE</a>
+
+							<?php 
+							   // the query
+							   $the_query = new WP_Query( array(
+							      'posts_per_page' => 4
+							   )); 
+							?>
+
+							<?php if ( $the_query->have_posts() ) : ?>
+					  		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+					  			<div class="post m-all t-1of4 d-1of4">
+									<div class="detail">
+										<div class="image" style="background-image: url(<?php the_post_thumbnail_url('large'); ?>)"></div>
+										<?php printf( '<p class="cat">' . __('', 'bonestheme' ) . '%1$s</p>' , get_the_category_list(', ') ); ?>
+										<h1><?php the_title(); ?></h1>
+										<p><?php echo get_excerpt_home(); ?></p>
+										<a href="<?php the_permalink(); ?>" class="btn-transparent light">LEARN MORE</a>
+									</div>
 								</div>
-							</div>
-							<div class="post m-all t-1of4 d-1of4">
-								<div class="detail">
-									<div class="image" style="background-image: url(<?php echo get_template_directory_uri(); ?>/library/images/mike_on_stage_tn.jpg)"></div>
-									<p class="cat">Category</p>
-									<h1>Blog headline here lorem ipsum</h1>
-									<p>Descriptor text lorem ipsum dolar sit amet consectuer a domus is magna…</p>
-									<a class="btn-transparent light">LEARN MORE</a>
-								</div>
-							</div>
-							<div class="post m-all t-1of4 d-1of4">
-								<div class="detail">
-									<div class="image" style="background-image: url(<?php echo get_template_directory_uri(); ?>/library/images/mike_on_stage_tn.jpg)"></div>
-									<p class="cat">Category</p>
-									<h1>Blog headline here lorem ipsum</h1>
-									<p>Descriptor text lorem ipsum dolar sit amet consectuer a domus is magna…</p>
-									<a class="btn-transparent light">LEARN MORE</a>
-								</div>
-							</div>
-							<div class="post m-all t-1of4 d-1of4">
-								<div class="detail">
-									<div class="image" style="background-image: url(<?php echo get_template_directory_uri(); ?>/library/images/mike_on_stage_tn.jpg)"></div>
-									<p class="cat">Category</p>
-									<h1>Blog headline here lorem ipsum</h1>
-									<p>Descriptor text lorem ipsum dolar sit amet consectuer a domus is magna…</p>
-									<a class="btn-transparent light">LEARN MORE</a>
-								</div>
-							</div>
+				  			<?php endwhile; ?>
+						  	<?php wp_reset_postdata(); ?>
+
+							<?php else : ?>
+						  		<p><?php __('No Posts'); ?></p>
+							<?php endif; ?>
+
+							
 							<div class="clearfix"></div>
 						</div>
 
@@ -130,9 +125,9 @@
 
 				<div class="full-width quote-wrap">
 					<div class="wrap">
-						<img src="<?php echo get_template_directory_uri(); ?>/library/images/head-shot.jpg">
-						<h1>“Mike has helped me see who I need to surround myself with and how I need to train them to attain the revenue, income, and quality of life that I want.”</h1>
-						<p>George Morris, Century 21</p>
+						<img src="<?php the_field('author-photo'); ?>">
+						<h1><?php the_field('quote'); ?></h1>
+						<p><?php the_field('author'); ?></p>
 					</div>
 				</div>
 

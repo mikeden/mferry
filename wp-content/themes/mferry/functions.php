@@ -257,6 +257,23 @@ $excerpt = $excerpt.'... <br/><a class="btn-transparent red" href="'.$permalink.
 return $excerpt;
 }
 
+function get_excerpt_home(){
+$permalink = get_permalink($post->ID);
+$excerpt = get_the_excerpt();
+if ($excerpt == '') {
+  $excerpt = get_the_content();
+}
+$excerpt = preg_replace(" ([.*?])",'',$excerpt);
+$excerpt = strip_shortcodes($excerpt);
+$excerpt = strip_tags($excerpt);
+$excerpt = substr($excerpt, 0, 90);
+$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+$excerpt = trim(preg_replace( '/s+/', ' ', $excerpt));
+$excerpt = $excerpt.'...';
+//$excerpt = $excerpt.'... <br/><a class="btn-transparent red" href="'.$permalink.'">more</a>';
+return $excerpt;
+}
+
 // Add FEATURED post functionality //
 
 function sm_custom_meta() {
@@ -326,25 +343,16 @@ function my_mce_before_init_insert_formats( $init_array ) {
 * Classes allows you to define CSS classes
 * Wrapper whether or not to add a new block-level element around any selected elements
 */
-    array(  
-      'title' => 'Content Block',  
-      'block' => 'div',  
-      'classes' => 'content-block',
-      'wrapper' => true,
-      
-    ),  
-    array(  
-      'title' => 'Blue Button',  
-      'block' => 'span',  
-      'classes' => 'blue-button',
-      'wrapper' => true,
-    ),
-    array(  
-      'title' => 'Red Button',  
-      'block' => 'span',  
-      'classes' => 'red-button',
-      'wrapper' => true,
-    ),
+    array(
+            'title' => 'My Style',
+            'selector' => 'p',
+            'classes' => 'myclass',
+        ),
+    array(
+            'title' => 'H1 Sub-Head',
+            'selector' => 'h1',
+            'classes' => 'sub-head',
+        ),
   );  
   // Insert the array, JSON ENCODED, into 'style_formats'
   $init_array['style_formats'] = json_encode( $style_formats );  
@@ -354,13 +362,6 @@ function my_mce_before_init_insert_formats( $init_array ) {
 } 
 // Attach callback to 'tiny_mce_before_init' 
 add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' ); 
-
-add_filter('tiny_mce_before_init', 'customize_tinymce');
-
-function customize_tinymce($in) {
-  $in['paste_preprocess'] = "function(pl,o){ o.content = o.content.replace(/p class=\"p[0-9]+\"/g,'p'); o.content = o.content.replace(/span class=\"s[0-9]+\"/g,'span'); }";
-  return $in;
-}
 
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
