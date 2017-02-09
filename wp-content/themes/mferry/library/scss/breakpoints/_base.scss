@@ -584,14 +584,16 @@ HOME PAGE
 	position: relative;
 	width: 100%;
 	overflow: hidden;
-	padding-bottom:60px;
+	
 	
 	&.white {
 		background:$white;
+		padding-bottom:60px;
 	}
 
 	&.gray {
 		background:#F8F8F4;
+		padding-bottom:60px;
 
 		&.padd-top {
 			padding-top: 80px;
