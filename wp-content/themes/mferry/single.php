@@ -2,7 +2,7 @@
 
 			<div id="content">
 
-				<div class="page-header standard-header">
+				<div class="page-header standard-header with-offset">
 					<div class="wrap">
 						<div class="header-image" style="background-image:url(<?php the_post_thumbnail_url('full'); ?>)"></div>
 					</div>

@@ -99,6 +99,15 @@ HEADER STYLES
 		font-size: 46px;
 		line-height: 340px;
 	}
+
+	&.with-offset {
+	
+		h1.page-title {
+			padding-top: 6%;
+			padding-bottom: 6%;
+		}
+
+	}
 }
 
 .mini {
@@ -237,6 +246,11 @@ LAYOUT STYLES
 	}
 }
 
+.inner-padd {
+	width: 80%;
+}
+
+
 .page-template-page-template-landing-pages {
 	#main {
 		padding-top: 180px;
@@ -328,6 +342,33 @@ HOME PAGE
 			font-size: 34px;
 		}
 
+	}
+
+}
+
+/*********************
+CONTACT
+*********************/
+
+.wpcf7 {
+	div {
+		&.left {
+			width: 30%;
+			min-height: 60px;
+			float:left;
+
+			label {
+				line-height: 40px;
+			}
+		}
+		&.right {
+			width: 70%;
+			min-height: 60px;
+			float:right;
+		}
+		&.full {
+			width: 100%;
+		}
 	}
 
 }

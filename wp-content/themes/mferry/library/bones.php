@@ -148,6 +148,8 @@ function bones_scripts_and_styles() {
 		wp_register_script( 'swiper-js', get_stylesheet_directory_uri() . '/library/js/libs/swiper.jquery.min.js', array( 'jquery' ), '', true );
 		wp_register_script( 'slicknav-js', get_stylesheet_directory_uri() . '/library/js/mobile-menu.js', array( 'jquery' ), '', true );
 		wp_register_script( 'footer-reveal-js', get_stylesheet_directory_uri() . '/library/js/libs/footer-reveal.js', array( 'jquery' ), '', true );
+		wp_register_script( 'contact-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBpcC39Dp5-4uJ-eJflIalH41SFAnVgBog', array( 'jquery' ), '', true );
+		wp_register_script( 'map-init', get_stylesheet_directory_uri() . '/library/js/map-init.js', array( 'jquery' ), '', true );
 
 		// enqueue styles and scripts
 		wp_enqueue_script( 'bones-modernizr' );
@@ -170,6 +172,18 @@ function bones_scripts_and_styles() {
 		wp_enqueue_script( 'swiper-js' );
 		wp_enqueue_script( 'slicknav-js' );
 		wp_enqueue_script( 'footer-reveal-js' );
+
+		 global $post;
+		 if( is_page() || is_single() )
+    		{
+        		switch($post->post_name) 
+        	{
+            	case 'contact':
+                wp_enqueue_script('contact-map');
+                wp_enqueue_script('map-init');
+                break;
+        	}
+    	} 
 
 	}
 }

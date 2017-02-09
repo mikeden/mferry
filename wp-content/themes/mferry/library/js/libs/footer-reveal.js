@@ -50,6 +50,8 @@
           'margin-bottom' : $this.outerHeight()
         });
       });
+    } else {
+       $(".main-footer").css("visibility", "visible");
     }
 
     return this;

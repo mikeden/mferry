@@ -681,7 +681,7 @@ body#tinymce.wp-editor p {
 }
 /* line 45, ../scss/editor-style.scss */
 body#tinymce.wp-editor a, body#tinymce.wp-editor a:visited {
-  color: #282828;
+  color: #7c7c7c;
   /* on hover */
   /* on click */
 }

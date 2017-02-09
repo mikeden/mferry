@@ -116,7 +116,7 @@ jQuery(document).ready(function($) {
   */
   loadGravatars();
 
-$('.main-footer').footerReveal({zIndex: -999999});
+$('.main-footer').footerReveal({shadow: false, zIndex: -999});
 
 $(function() {
 
